@@ -1,0 +1,52 @@
+<mvc:View
+   controllerName="task2.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+   <App id="app">
+      <pages>
+         <Page title="{i18n>pagetitle}">
+            <content>
+                        <Table 
+                            id="empTab"
+		                    class="sapUiResponsiveMargin"
+                            backgroundDesign="Solid"
+		                    width="auto"
+                            items="{
+                               path : 'employee>/Employees',
+                               sorter : {
+                               path : 'FirstName' 
+                               }
+                               }"
+		                      >
+                            <headerToolbar>
+			                    <Toolbar>
+				                     <Title id="Titleid" text="{i18n>tabletitle}"/>
+			                    </Toolbar>
+		                    </headerToolbar> 
+                              <columns>
+			                        <Column>
+				                        <FormattedText htmlText="{i18n>column1}"/>
+			                        </Column>
+                                 <Column>
+				                        <FormattedText htmlText="{i18n>column2}"/>
+			                        </Column>
+		                        </columns>
+                           <items>
+                               <ColumnListItem
+                               type="Navigation"
+                               press="onPress">
+                                  <cells>
+                                  <Text text="{employee>Emp-id}"></Text>
+                                  <Text text="{employee>FirstName}"></Text>
+                                  </cells>
+                               </ColumnListItem>
+                           </items>
+                        </Table>
+            </content>
+         </Page>
+      </pages>
+   </App>
+   </Shell>
+</mvc:View>
